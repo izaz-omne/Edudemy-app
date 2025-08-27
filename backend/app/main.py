@@ -6,10 +6,14 @@ from .config import settings
 
 app = FastAPI(title='Edudemy API')
 
-#adjust for frontend dev URL(Vite Default port 5173)
+#adjust for frontend dev URL and preview URL
 origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
     "http://localhost:5173",
-    "http://127.0.0.1:5173"
+    "http://127.0.0.1:5173",
+    "https://checkmate-24.preview.emergentagent.com",
+    "https://*.preview.emergentagent.com"
 ]
 
 app.add_middleware(
